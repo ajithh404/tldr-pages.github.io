@@ -8,13 +8,15 @@
  */
 
 html {
-  font: 16px/1.5 Inconsolata, monospace;
+  font: 16px/1.5 "Fira Code", "Source Code Pro", Inconsolata, monospace;
 }
 
 body {
   margin: 2rem 0 5rem;
   color: var(--secondary-color);
   background-color: var(--primary-color);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 :root {
@@ -32,13 +34,18 @@ body {
 }
 
 a {
-  color: #0074d9; /* From http://clrs.cc */
+  color: #0074d9; /* From [http://clrs.cc](http://clrs.cc) */
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid #0074d9;
+  outline-offset: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,6 +75,11 @@ h2 {
   cursor: pointer;
   margin-left: 50px;
   padding-top: 75px;
+  transition: transform 0.2s ease;
+}
+
+#icon:hover {
+  transform: scale(1.1);
 }
 
 h2 a {
@@ -144,13 +156,15 @@ td {
 
 pre,
 code {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Fira Code", "Source Code Pro", "Inconsolata", monospace;
   background-color: var(--pre-background-color);
 }
 
 pre {
   padding: .5rem 1rem;
   font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 code {
@@ -237,7 +251,6 @@ noscript {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
-
 
 @media (min-width: 30rem) {
   html {
